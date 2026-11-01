@@ -2,54 +2,58 @@
  * Paleta cálida y tranquila. Colores como variables para cambiarlos fácilmente.
  */
 :root {
-  --bg: #f8f4ee;
+  --bg: #fcf6fa;
   --surface: #ffffff;
-  --surface-2: #f1ebe2;
-  --text: #2a2622;
-  --muted: #6a6159;
-  --border: #e3d9cc;
-  --primary: #2f6b66;
+  --surface-2: #f6edf4;
+  --text: #2d2430;
+  --muted: #6b5e6c;
+  --border: #ecdde8;
+  --primary: #8a4c7e;
   --primary-ink: #ffffff;
-  --primary-soft: #e3efed;
-  --bio: #3d7a4f;
-  --bio-soft: #e4f0e6;
-  --qui: #a5532e;
-  --qui-soft: #f6e6dd;
+  --primary-soft: #f5e6f1;
+  --bio: #b3466f;
+  --bio-soft: #fde4ee;
+  --bio-tint: #fff6fa;
+  --qui: #6f50ad;
+  --qui-soft: #ece4fb;
+  --qui-tint: #f9f6ff;
   --ok: #2d7a4a;
   --ok-soft: #e2f2e7;
   --warn: #8a5a00;
   --warn-soft: #fbf0d9;
   --bad: #b3352b;
   --bad-soft: #fbe5e2;
-  --focus: #1f5fbf;
+  --focus: #5b3fd0;
   --radius: 14px;
-  --shadow: 0 1px 2px rgba(42, 38, 34, .06), 0 4px 16px rgba(42, 38, 34, .05);
+  --shadow: 0 1px 2px rgba(60, 30, 55, .06), 0 4px 16px rgba(60, 30, 55, .06);
   --font: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   color-scheme: light;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg: #1b1a18;
-    --surface: #242220;
-    --surface-2: #2d2a27;
-    --text: #efe9e2;
-    --muted: #b4aba1;
-    --border: #3b3733;
-    --primary: #7cc2ba;
-    --primary-ink: #10201e;
-    --primary-soft: #23383a;
-    --bio: #8fcf9f;
-    --bio-soft: #233428;
-    --qui: #f0a582;
-    --qui-soft: #3a2a22;
+    --bg: #1d1820;
+    --surface: #262029;
+    --surface-2: #2f2733;
+    --text: #f2eaf0;
+    --muted: #b9aab7;
+    --border: #3e3342;
+    --primary: #e2a6d4;
+    --primary-ink: #2a1526;
+    --primary-soft: #3a2636;
+    --bio: #f5a9c5;
+    --bio-soft: #43263a;
+    --bio-tint: #2b2129;
+    --qui: #c6b2f6;
+    --qui-soft: #33294a;
+    --qui-tint: #26222f;
     --ok: #8fd6a6;
     --ok-soft: #1f3327;
     --warn: #f1c46b;
     --warn-soft: #3a3020;
     --bad: #f3968c;
     --bad-soft: #3d2420;
-    --focus: #8ab4ff;
+    --focus: #c9b6ff;
     --shadow: none;
     color-scheme: dark;
   }
@@ -199,8 +203,8 @@ legend { font-weight: 600; margin-bottom: .4rem; }
 .lista-tareas { padding-left: 1.1rem; }
 .lista-tareas li { margin-bottom: .3rem; }
 .tarjeta-asig { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.1rem 1.25rem; box-shadow: var(--shadow); }
-.tarjeta-asig.bio { border-top: 4px solid var(--bio); }
-.tarjeta-asig.qui { border-top: 4px solid var(--qui); }
+.tarjeta-asig.bio { border-top: 4px solid var(--bio); background: linear-gradient(180deg, var(--bio-soft), var(--bio-tint) 45%); }
+.tarjeta-asig.qui { border-top: 4px solid var(--qui); background: linear-gradient(180deg, var(--qui-soft), var(--qui-tint) 45%); }
 .tarjeta-asig h3 a { color: var(--text); text-decoration: none; }
 .tarjeta-asig p { margin-bottom: .3rem; }
 
@@ -225,8 +229,8 @@ legend { font-weight: 600; margin-bottom: .4rem; }
 .pestana { padding: .6rem .9rem; text-decoration: none; color: var(--muted); font-weight: 600; border-bottom: 3px solid transparent; margin-bottom: -1px; }
 .pestana.activa { color: var(--primary); border-bottom-color: var(--primary); }
 .titulo-asig { padding-left: .7rem; border-left: 5px solid var(--primary); }
-.titulo-asig.bio { border-left-color: var(--bio); }
-.titulo-asig.qui { border-left-color: var(--qui); }
+.titulo-asig.bio { border-left-color: var(--bio); color: var(--bio); }
+.titulo-asig.qui { border-left-color: var(--qui); color: var(--qui); }
 .bloque-asig { margin-bottom: 2rem; }
 .lista-temas { list-style: none; padding: 0; margin: 0 0 1rem; }
 .fila-tema {
@@ -356,8 +360,17 @@ details > summary { cursor: pointer; }
 .lista-ejercicios li:first-child { border-top: 0; }
 .recomendaciones li { margin: .3rem 0; }
 .enlace-boton { background: none; border: 0; padding: 0; color: var(--primary); text-decoration: underline; font: inherit; cursor: pointer; }
-.saludo { margin: .25rem 0 1rem; padding: .8rem 1rem; border-radius: 14px; background: var(--qui-soft); color: var(--text); font-size: 1.08rem; font-weight: 600; line-height: 1.45; animation: aparecer .6s ease-out; }
-.saludo .corazon { color: #d9536f; margin-right: .2rem; }
+.saludo { margin: .25rem 0 1rem; padding: .8rem 1rem; border-radius: 14px; background: linear-gradient(120deg, var(--bio-soft), var(--qui-soft)); color: var(--text); font-size: 1.08rem; font-weight: 600; line-height: 1.45; animation: aparecer .6s ease-out; }
+.saludo .corazon { color: var(--bio); margin-right: .2rem; }
 .saludo .firma { font-weight: 400; font-style: italic; color: var(--muted); white-space: nowrap; }
 @keyframes aparecer { from { opacity: 0; transform: translateY(-4px); } to { opacity: 1; transform: none; } }
 @media (prefers-reduced-motion: reduce) { .saludo { animation: none; } }
+
+/* Toque de color por asignatura */
+.cabecera { box-shadow: inset 0 -3px 0 transparent; border-image: linear-gradient(90deg, var(--bio), var(--qui)) 1; border-bottom-width: 3px; }
+.marca-icono { background: linear-gradient(135deg, var(--bio), var(--qui)); }
+.cab-tema.bio, .fila-tema.bio { border-left: 4px solid var(--bio); }
+.cab-tema.qui, .fila-tema.qui { border-left: 4px solid var(--qui); }
+.bloque-asig.bio h3 { color: var(--bio); }
+.bloque-asig.qui h3 { color: var(--qui); }
+.oficial { border-left-color: var(--primary); }

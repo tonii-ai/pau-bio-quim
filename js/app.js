@@ -369,12 +369,12 @@
       }).join('') + '</div>';
 
     const cont = PAU.asignaturas.filter(function (a) { return !filtro || a.id === filtro; }).map(function (a) {
-      return '<section class="bloque-asig"><h2 class="titulo-asig ' + a.id + '">' + esc(a.nombre) + '</h2>' +
+      return '<section class="bloque-asig ' + a.id + '"><h2 class="titulo-asig ' + a.id + '">' + esc(a.nombre) + '</h2>' +
         '<p class="suave">Bloques según ' + fuenteLink(a.fuente) + '. Formato observado en 2025: ' + esc(a.examen.resumen) + '</p>' +
         a.bloques.map(function (b) {
           return '<h3>' + esc(b.nombre) + '</h3><ul class="lista-temas">' + b.temas.map(function (t) {
             const e = store.tema(t.id); const s = plan.statsTema(t.id);
-            return '<li><a class="fila-tema" href="#/tema/' + t.id + '"><span class="nombre">' + esc(t.nombre) + '</span>' +
+            return '<li><a class="fila-tema ' + a.id + '" href="#/tema/' + t.id + '"><span class="nombre">' + esc(t.nombre) + '</span>' +
               '<span class="meta"><span class="estado ' + e.estado + '">' + NOMBRE_ESTADO[e.estado] + '</span>' +
               (e.prioridad ? '<span class="estado prioridad">Prioridad</span>' : '') +
               '<span class="suave">' + s.tarjetas + ' tarjetas · ' + s.preguntas + ' preguntas' + (s.acierto != null ? ' · ' + pct(s.acierto) : '') + '</span></span></a></li>';

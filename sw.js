@@ -4,7 +4,7 @@
  * Estrategia: responde con la copia guardada y la actualiza en segundo plano.
  * Si cambias archivos, sube VERSION para que se descarguen de nuevo.
  */
-const VERSION = 'pau-v5';
+const VERSION = 'pau-v6';
 const ARCHIVOS = [
   './', 'index.html', 'css/styles.css', 'manifest.webmanifest', 'icono.svg',
   'data/fuentes.js', 'data/temario-biologia.js', 'data/temario-quimica.js', 'data/tarjetas-2.js',
