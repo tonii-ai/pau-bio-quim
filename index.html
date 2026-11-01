@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Estudio para la PAU de Cataluña: Biología y Química. Plan, temario, tarjetas, práctica y simulacros. Funciona sin conexión y guarda el progreso en tu dispositivo.">
+  <meta name="theme-color" content="#2f6b66">
+  <title>PAU Biología y Química</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%232f6b66'/%3E%3Cpath d='M10 8h12M12 8v7l-4 9h16l-4-9V8' fill='none' stroke='%23fff' stroke-width='2' stroke-linejoin='round'/%3E%3C/svg%3E">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="apple-touch-icon" href="icono.svg">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a class="saltar" href="#app">Saltar al contenido</a>
+
+  <header class="cabecera">
+    <div class="cabecera-interior">
+      <a class="marca" href="#/" aria-label="PAU Biología y Química, inicio">
+        <span class="marca-icono" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="22" height="22"><path d="M8 3h8M10 3v6l-5 10a1.5 1.5 0 0 0 1.3 2h11.4a1.5 1.5 0 0 0 1.3-2L14 9V3" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+        </span>
+        <span>PAU <strong>Bio · Quím</strong></span>
+      </a>
+      <nav class="nav" aria-label="Principal">
+        <a href="#/" data-nav="">
+          <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></svg><span>Hoy</span></a>
+        <a href="#/plan" data-nav="plan">
+          <svg aria-hidden="true" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg><span>Plan</span></a>
+        <a href="#/temario" data-nav="temario">
+          <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2z"/><path d="M4 19V5M8 7h7"/></svg><span>Temario</span></a>
+        <a href="#/practica" data-nav="practica">
+          <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M9 11l3 3 8-8"/><path d="M20 12v7a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h9"/></svg><span>Práctica</span></a>
+        <a href="#/progreso" data-nav="progreso">
+          <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg><span>Progreso</span></a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="app" class="contenido" tabindex="-1">
+    <noscript>
+      <p class="banner error">Esta aplicación necesita JavaScript. Actívalo en tu navegador para usarla.</p>
+    </noscript>
+  </main>
+
+  <footer class="pie">
+    <p>Funciona sin conexión, sin cuentas y sin seguimiento. El progreso se guarda solo en este dispositivo.
+      <a href="#/fuentes">Fuentes y verificación</a> · <a href="#/glosario">Glosario catalán-castellano</a> · <a href="#/progreso">Copia de seguridad</a></p>
+  </footer>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <dialog id="dialogo" class="dialogo"></dialog>
+
+  <!-- Datos (editables) -->
+  <script src="data/fuentes.js"></script>
+  <script src="data/temario-biologia.js"></script>
+  <script src="data/temario-quimica.js"></script>
+  <script src="data/tarjetas-2.js"></script>
+  <script src="data/preguntas-biologia.js"></script>
+  <script src="data/preguntas-quimica.js"></script>
+  <script src="data/preguntas-biologia-2.js"></script>
+  <script src="data/preguntas-quimica-2.js"></script>
+  <script src="data/preguntas-dificiles.js"></script>
+  <script src="data/ejercicios.js"></script>
+  <script src="data/esquemas.js"></script>
+  <script src="data/glosario.js"></script>
+  <script src="data/saludos.js"></script>
+  <!-- Lógica -->
+  <script src="js/store.js"></script>
+  <script src="js/plan.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
